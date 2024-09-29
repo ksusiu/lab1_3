@@ -1,15 +1,19 @@
+// main.cpp
 #include <iostream>
-#include "string_operations.h" // Подключаем заголовочный файл с операциями над строками
+#include "point.h"
 
 int main() {
-std::string str1 = "Hello";
-std::string str2 = "World";
+// Создаём две точки с координатами (1, 2) и (4, 6)
+Point p1(1, 2);
+Point p2(4, 6);
 
-// Используем функции из string_operations
-std::cout « "Concatenation: " « concatenate(str1, str2) « std::endl;
-std::cout « "String Length: " « getLength(str1) « std::endl;
-std::cout « "Reversed String: " « reverseString(str1) « std::endl;
-std::cout « "Is Palindrome: " « (isPalindrome("radar") ? "Yes" : "No") « std::endl;
+// Выводим координаты точек
+std::cout « "Point 1: (" « p1.getX() « ", " « p1.getY() « ")\n";
+std::cout « "Point 2: (" « p2.getX() « ", " « p2.getY() « ")\n";
+
+// Вычисляем и выводим расстояние между точками
+double dist = Point::distance(p1, p2);
+std::cout « "Distance between points: " « dist « std::endl;
 
 return 0;
 }
